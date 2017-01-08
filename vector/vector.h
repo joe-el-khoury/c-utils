@@ -2,6 +2,7 @@
 #define VECTOR_H
 
 #include <stdlib.h>
+#include <stdbool.h>
 
 /**
  * C++-style vectors, with the tedious programming in C.
@@ -21,6 +22,6 @@ void delete_vector (vector*);
 void push_back (vector*, void*);
 
 // Queries.
-bool search (vector*, void*);
+bool search (vector*, void*, bool (*)(void*, void*));
 
 #endif /* VECTOR_H */

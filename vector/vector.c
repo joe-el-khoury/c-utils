@@ -24,7 +24,7 @@ void delete_vector (vector* _to_del) {
         goto del_just_vec;
     }
     
-    for (int i = 0; i < _to_del->size; ++i) {
+    for (size_t i = 0; i < _to_del->size; ++i) {
         void* curr = _to_del->data[i];
         if (curr) {
             free(curr);
@@ -45,11 +45,11 @@ void _increase_capacity (vector* _vec) {
     }
 
     // Double the capacity of the vector.
-    int new_capacity = _vec->capacity * 2;
+    size_t new_capacity = _vec->capacity * 2;
     void** new_data  = (void**)(malloc(sizeof(void*) * new_capacity));
 
     // Copy the elements over.
-    for (int i = 0; i < _vec->size; ++i) {
+    for (size_t i = 0; i < _vec->size; ++i) {
         new_data[i] = _vec->data[i];
     }
 
@@ -69,5 +69,6 @@ void push_back (vector* _vec, void* _data) {
     _vec->size++;
 }
 
-// Search for an element, with just a simple equality comparison (==).
-bool search (vector* _vec, void* data) {}
+// Search for an element, given a comparison function.
+bool search (vector* _vec, void* _data, bool (*cmp)(void* _a, void* _b)) {
+}
