@@ -20,6 +20,7 @@ void delete_vector (vector*);
 
 // Operations.
 void push_back (vector*, void*);
+void insert (vector*, void*, int);
 
 // Search.
 bool search (vector*, void*, bool (*)(void*, void*));
