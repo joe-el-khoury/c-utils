@@ -69,7 +69,36 @@ void push_back (vector* _vec, void* _data) {
     _vec->size++;
 }
 
-void insert (vector* _vec, void* _data, int _at) {}
+// Insert an element at an arbitrary position in the vector.
+// Should've used a linked list, though.
+void insert (vector* _vec, void* _data, int _at) {
+    if (!_vec || !_data) {
+        return;
+    }
+
+    if (_vec->size == _vec->capacity) {
+        _increase_capacity(_vec);
+    }
+
+    // Keep increasing capacity until we can make space for the element.
+    while (_at >= _vec->capacity) {
+        _increase_capacity(_vec);
+    }
+
+    // Inserting an element after the last element - no need to rearrange elements.
+    if (_at >= _vec->size) {
+        _vec->data[_at] = _data;
+        _vec->size = _at+1;
+        return;
+    }
+
+    // Inserting somewhere in the middle.- move all elements to the right of where we're inserting one slot forward.
+    for (int i = _vec->size-1; i >= _at; ++i) {
+        _vec->data[i+1] = _vec->data[i];
+    }
+    _vec->data[_at] = _data;
+    _vec->size++;
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////      SEARCH FUNCTIONS    ///////////////////////////////////////////////
