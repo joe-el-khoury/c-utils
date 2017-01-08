@@ -70,5 +70,17 @@ void push_back (vector* _vec, void* _data) {
 }
 
 // Search for an element, given a comparison function.
-bool search (vector* _vec, void* _data, bool (*cmp)(void* _a, void* _b)) {
+bool search (vector* _vec, void* _data, bool (*_cmp)(void* _a, void* _b)) {
+    if (!_vec || !_data || !_cmp) {
+        return false;
+    }
+
+    for (int i = 0; i < _vec->size; ++i) {
+        bool are_eq = _cmp(_vec->data[i], _data);
+        if (are_eq) {
+            return true;
+        }
+    }
+
+    return false;
 }
