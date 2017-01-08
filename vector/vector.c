@@ -15,4 +15,4 @@ vector* new_vector () {
     return ret;
 }
 
-void delete_vector () {}
+void delete_vector (vector* _to_del) {}

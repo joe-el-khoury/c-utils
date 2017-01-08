@@ -14,6 +14,6 @@ struct vectors {
 } typedef vector;
 
 vector* new_vector ();
-void delete_vector ();
+void delete_vector (vector*);
 
 #endif /* VECTOR_H */
