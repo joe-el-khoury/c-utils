@@ -90,6 +90,7 @@ bool _cmp_int (void* _a, void* _b) {
 }
 
 bool search_int (vector* _vec, int _int) {
+    return search(_vec, (void*)(&_int), _cmp_int);
 }
 
 bool _cmp_str (void* _a, void* _b) {
@@ -110,4 +111,6 @@ bool _cmp_str (void* _a, void* _b) {
     return !str_a[i] && !str_b[i];
 }
 
-bool search_str (vector* _vec, char* _str) {}
+bool search_str (vector* _vec, char* _str) {
+    return search(_vec, (void*)(_str), _cmp_str);
+}
