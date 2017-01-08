@@ -66,4 +66,5 @@ void push_back (vector* _vec, void* _data) {
         _increase_capacity(_vec);
     }
     _vec->data[_vec->size] = _data;
+    _vec->size++;
 }
