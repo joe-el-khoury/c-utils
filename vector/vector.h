@@ -22,6 +22,8 @@ void delete_vector_free (vector*);
 // Operations.
 void push_back (vector*, void*);
 void insert (vector*, void*, int);
+void* get (vector*, int);
+void  set (vector*, int, void*);
 
 // Search.
 bool search (vector*, void*, bool (*)(void*, void*));
