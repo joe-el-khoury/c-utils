@@ -85,11 +85,29 @@ bool search (vector* _vec, void* _data, bool (*_cmp)(void* _a, void* _b)) {
     return false;
 }
 
-bool cmp_int (void* _a, void* _b) {
+bool _cmp_int (void* _a, void* _b) {
     return *((int*)(_a)) == *((int*)(_b));
 }
 
 bool search_int (vector* _vec, int _int) {
+}
+
+bool _cmp_str (void* _a, void* _b) {
+    // Cast the void pointers.
+    char* str_a = (char*)(_a);
+    char* str_b = (char*)(_b);
+
+    int i = 0;
+    while (str_a[i] && str_b[i]) {
+        if (str_a[i] != str_a[i]) {
+            return false;
+        }
+
+        i++;
+    }
+
+    // We should've reached the null character in both strings if they are equal.
+    return !str_a[i] && !str_b[i];
 }
 
 bool search_str (vector* _vec, char* _str) {}
