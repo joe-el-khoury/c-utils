@@ -68,3 +68,6 @@ void push_back (vector* _vec, void* _data) {
     _vec->data[_vec->size] = _data;
     _vec->size++;
 }
+
+// Search for an element, with just a simple equality comparison (==).
+bool search (vector* _vec, void* data) {}

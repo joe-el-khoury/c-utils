@@ -20,4 +20,7 @@ void delete_vector (vector*);
 // Operations.
 void push_back (vector*, void*);
 
+// Queries.
+bool search (vector*, void*);
+
 #endif /* VECTOR_H */
