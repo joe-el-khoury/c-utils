@@ -1,6 +1,8 @@
 #ifndef VECTOR_H
 #define VECTOR_H
 
+#include <stdlib.h>
+
 /**
  * C++-style vectors, with the tedious programming in C.
  */
