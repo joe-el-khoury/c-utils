@@ -57,4 +57,13 @@ void _increase_capacity (vector* _vec) {
     _vec->capacity = new_capacity;
 }
 
-void push_back (vector* _vec, void* _data) {}
+void push_back (vector* _vec, void* _data) {
+    if (!_vec || !_data) {
+        return;
+    }
+
+    if (_vec->size == _vec->capacity) {
+        _increase_capacity(_vec);
+    }
+    _vec->data[_vec->size] = _data;
+}
