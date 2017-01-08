@@ -36,4 +36,25 @@ del_just_vec:
     free(_to_del);
 }
 
+void _increase_capacity (vector* _vec) {
+    if (!_vec) {
+        return;
+    }
+    if (!_vec->data) {
+        return;
+    }
+
+    // Double the capacity of the vector.
+    int new_capacity = _vec->capacity * 2;
+    void** new_data  = (void**)(malloc(sizeof(void*) * new_capacity));
+
+    // Copy the elements over.
+    for (int i = 0; i < _vec->size; ++i) {
+        new_data[i] = _vec->data[i];
+    }
+
+    free(_vec->data);
+    _vec->capacity = new_capacity;
+}
+
 void push_back (vector* _vec, void* _data) {}
