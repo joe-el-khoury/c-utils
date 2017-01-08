@@ -13,7 +13,11 @@ struct vectors {
     void** data;
 } typedef vector;
 
+// Allocation and deallocation.
 vector* new_vector ();
 void delete_vector (vector*);
+
+// Operations.
+void push_back (vector*, void*);
 
 #endif /* VECTOR_H */

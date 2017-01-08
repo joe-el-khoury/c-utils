@@ -35,3 +35,5 @@ void delete_vector (vector* _to_del) {
 del_just_vec:
     free(_to_del);
 }
+
+void push_back (vector* _vec, void* _data) {}
