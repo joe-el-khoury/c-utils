@@ -84,3 +84,6 @@ bool search (vector* _vec, void* _data, bool (*_cmp)(void* _a, void* _b)) {
 
     return false;
 }
+
+bool search_int (vector* _vec, int _int) {}
+bool search_str (vector* _vec, char* _str) {}

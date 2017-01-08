@@ -21,7 +21,9 @@ void delete_vector (vector*);
 // Operations.
 void push_back (vector*, void*);
 
-// Queries.
+// Search.
 bool search (vector*, void*, bool (*)(void*, void*));
+bool search_int (vector*, int);
+bool search_str (vector*, char*);
 
 #endif /* VECTOR_H */
