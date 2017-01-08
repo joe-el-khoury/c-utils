@@ -17,6 +17,7 @@ struct vectors {
 // Allocation and deallocation.
 vector* new_vector ();
 void delete_vector (vector*);
+void delete_vector_free (vector*);
 
 // Operations.
 void push_back (vector*, void*);

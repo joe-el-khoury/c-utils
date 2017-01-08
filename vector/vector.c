@@ -15,25 +15,41 @@ vector* new_vector () {
     return ret;
 }
 
-void delete_vector (vector* _to_del) {
-    if (!_to_del) {
+// Only free the vector, but don't free its elements.
+void delete_vector (vector* _vec) {
+    if (!_vec) {
         return;
     }
     
-    if (!_to_del->data) {
+    if (!_vec->data) {
+        goto del_just_vec;
+    }
+
+    free(_vec->data);
+del_just_vec:
+    free(_vec);
+}
+
+// Free all the elements as well.
+void delete_vector_free (vector* _vec) {
+    if (!_vec) {
+        return;
+    }
+    
+    if (!_vec->data) {
         goto del_just_vec;
     }
     
-    for (size_t i = 0; i < _to_del->size; ++i) {
-        void* curr = _to_del->data[i];
+    for (size_t i = 0; i < _vec->size; ++i) {
+        void* curr = _vec->data[i];
         if (curr) {
             free(curr);
         }
     }
-    free(_to_del->data);
-
+    
+    free(_vec->data);
 del_just_vec:
-    free(_to_del);
+    free(_vec);
 }
 
 void _increase_capacity (vector* _vec) {
