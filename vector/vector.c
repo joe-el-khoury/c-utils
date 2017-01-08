@@ -15,4 +15,23 @@ vector* new_vector () {
     return ret;
 }
 
-void delete_vector (vector* _to_del) {}
+void delete_vector (vector* _to_del) {
+    if (!_to_del) {
+        return;
+    }
+    
+    if (!_to_del->data) {
+        goto del_just_vec;
+    }
+    
+    for (int i = 0; i < _to_del->size; ++i) {
+        void* curr = _to_del->data[i];
+        if (curr) {
+            free(curr);
+        }
+    }
+    free(_to_del->data);
+
+del_just_vec:
+    free(_to_del);
+}
