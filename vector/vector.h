@@ -13,4 +13,7 @@ struct vectors {
     void** data;
 } typedef vector;
 
+vector* new_vector ();
+void delete_vector ();
+
 #endif /* VECTOR_H */
