@@ -99,6 +99,16 @@ void push_back_int (vector* _vec, int _int) {
     push_back(_vec, (void*)(data));
 }
 
+void push_back_str (vector* _vec, char* _str) {
+    size_t len = strlen(_str);
+    if (len <= 0) {
+        return;
+    }
+
+    char* data = (char*)(malloc(sizeof(char) * len));
+    push_back(_vec, (void*)(data));
+}
+
 // Insert an element at an arbitrary position in the vector.
 // Should've used a linked list, though.
 void insert (vector* _vec, void* _data, int _at) {

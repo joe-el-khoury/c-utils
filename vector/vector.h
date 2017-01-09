@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 
 /**
  * C++-style vectors, with the tedious programming in C.
