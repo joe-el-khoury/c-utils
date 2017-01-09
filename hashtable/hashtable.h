@@ -2,7 +2,7 @@
 #define HASHTABLE_H
 
 // Keys and values can only be ints and strs for now.
-struct entry_pair {
+struct entry_pairs {
     union {
         struct {
             int key;
@@ -24,6 +24,6 @@ struct entry_pair {
             int   val;
         } _str_int;
     };
-};
+} typedef entry_pair;
 
 #endif /* HASHTABLE_H */
