@@ -24,8 +24,8 @@ void push_back (vector*, void*);
 void push_back_int (vector*, int);
 void push_back_str (vector*, char*);
 void insert (vector*, void*, int);
-void* get (vector*, int);
-void  set (vector*, int, void*);
+void** get (vector*, int);
+void   set (vector*, int, void*);
 
 // Search.
 bool search (vector*, void*, bool (*)(void*, void*));

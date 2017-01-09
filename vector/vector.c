@@ -125,12 +125,12 @@ void insert (vector* _vec, void* _data, int _at) {
 }
 
 // Get an element at a specific index, return NULL if element doesn't exist.
-void* get (vector* _vec, int _idx) {
+void** get (vector* _vec, int _idx) {
     if (!_vec || _idx < 0 || _idx >= _vec->size) {
         return NULL;
     }
 
-    return _vec->data[_idx];
+    return &(_vec->data[_idx]);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
