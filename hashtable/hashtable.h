@@ -1,6 +1,9 @@
 #ifndef HASHTABLE_H
 #define HASHTABLE_H
 
+#include <string.h>
+#include <stdlib.h>
+
 // Keys and values can only be ints and strs for now.
 struct entry_pairs {
     union {
