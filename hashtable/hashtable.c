@@ -45,3 +45,8 @@ entry_pair* _new_str_int_pair (const char* _key, int _val) {
     ep->_str_int.val = _val;
     return ep;
 }
+
+void _free_int_int_pair (entry_pair* _ep) { if (!_ep) { return; } free(_ep); }
+void _free_int_str_pair (entry_pair* _ep) { if (!_ep) { return; } free(_ep->_int_str.val); free(_ep); }
+void _free_str_str_pair (entry_pair* _ep) { if (!_ep) { return; } free(_ep->_str_str.key); free(_ep->_str_str.val); free(_ep); }
+void _free_str_int_pair (entry_pair* _ep) { if (!_ep) { return; } free(_ep->_str_int.key); free(_ep); }
