@@ -78,6 +78,7 @@ void _increase_capacity (vector* _vec) {
     }
 
     free(_vec->data);
+    _vec->data = new_data;
     _vec->capacity = new_capacity;
 }
 
