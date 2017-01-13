@@ -18,16 +18,7 @@ vector* new_vector_with_sz (size_t _sz) {
 }
 
 vector* new_vector () {
-    vector* ret = (vector*)(malloc(sizeof(vector)));
-
-    // We can assume no memory errors occur.
-
-    ret->data = (void**)(malloc(sizeof(void*) * INITIAL_ALLOC));
-    // Size is the number of elements, capacity is how much the vector can hold.
-    ret->size = 0;
-    ret->capacity = INITIAL_ALLOC;
-
-    return ret;
+    return new_vector_with_sz(INITIAL_ALLOC);
 }
 
 // Only free the vector, but don't free its elements.
