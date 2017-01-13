@@ -4,6 +4,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include "../vector/vector.h"
+
 // Keys and values can only be ints and strs for now.
 struct entry_pairs {
     union {
@@ -38,5 +40,12 @@ void _free_int_int_pair (entry_pair*);
 void _free_int_str_pair (entry_pair*);
 void _free_str_str_pair (entry_pair*);
 void _free_str_int_pair (entry_pair*);
+
+struct hashtables {
+    // A vector of entry_pairs.
+    vector* buckets;
+    // The size of the hash table, specified at creation time.
+    size_t size;
+} typedef hashtable;
 
 #endif /* HASHTABLE_H */
