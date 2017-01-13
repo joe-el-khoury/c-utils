@@ -16,6 +16,7 @@ struct vectors {
 } typedef vector;
 
 // Allocation and deallocation.
+vector* new_vector_with_sz (size_t);
 vector* new_vector ();
 void delete_vector (vector*);
 void delete_vector_free (vector*);

@@ -6,6 +6,17 @@
 /////////////////////////////////      ALLOC/DEALLOC FUNCTIONS   /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+vector* new_vector_with_sz (size_t _sz) {
+    vector* ret = (vector*)(malloc(sizeof(vector)));
+
+    ret->data = (void**)(malloc(sizeof(void*) * _sz));
+    // Size is the number of elements, capacity is how much the vector can hold.
+    ret->size = 0;
+    ret->capacity = _sz;
+
+    return ret;
+}
+
 vector* new_vector () {
     vector* ret = (vector*)(malloc(sizeof(vector)));
 
